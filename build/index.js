@@ -4,17 +4,6 @@ var perf_hooks_1 = require("perf_hooks");
 var prompt = require('prompt');
 var readlineSync = require('readline-sync');
 var fs = require('fs');
-// prompt.start();
-// prompt.get(['username', 'email'], function (err: string, result: { username: string; email: string; }) {
-//     if (err) { return onErr(err); }
-//     console.log('Command-line input received:');
-//     console.log('  Username: ' + result.username);
-//     console.log('  Email: ' + result.email);
-// });
-function onErr(err) {
-    console.log(err);
-    return 1;
-}
 var ReverseWords = /** @class */ (function () {
     function ReverseWords() {
         this.word = readlineSync.question('Write a word and I do magic with that? ', { limit: /^[a-zA-Z0-9_.-]*$/ });
@@ -32,7 +21,15 @@ var ReverseWords = /** @class */ (function () {
         });
     };
     ReverseWords.createJsonFile = function (pathToJson, dict) {
-        fs.writeFileSync(pathToJson, dict);
+        var data = JSON.stringify(dict, null, 2);
+        fs.writeFileSync(pathToJson, data, function (err) {
+            if (err) {
+                console.log('Error writing file', err);
+            }
+            else {
+                console.log('Successfully wrote file');
+            }
+        });
     };
     return ReverseWords;
 }());
@@ -44,6 +41,5 @@ var ab = greeter.changeUpperToLowerAndViceVersa(avs);
 var t1 = perf_hooks_1.performance.now();
 var dict = { "input": greeter.word,
     "output": ab,
-    "performance": (t1 - t0), };
-var data = JSON.stringify(dict, null, 2);
-ReverseWords.createJsonFile('processed.json', data);
+    "performance": (t1 - t0) };
+ReverseWords.createJsonFile('processed.json', dict);

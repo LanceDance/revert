@@ -26,16 +26,17 @@ class ReverseWords {
     }
 
     static createJsonFile(pathToJson: string, dict: object) {
-        try
-        {let data = JSON.stringify(dict, null, 2);
-        fs.writeFileSync(pathToJson, data)
+        let data = JSON.stringify(dict, null, 2);
+        fs.writeFileSync(pathToJson, data, (err: any) => {
+            if (err) {
+                console.log('Error writing file', err)
+            } else {
+                console.log('Successfully wrote file')
+            }
         }
-        catch (e: unknown)
-    }
-
+        )}
 
 };
-
 let t0 = performance.now();
 let greeter = new ReverseWords();
 let avs = greeter.reverseString();
