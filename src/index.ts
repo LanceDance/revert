@@ -12,8 +12,8 @@ class ReverseWords {
     }
 
     reverseString() {
-        var newString = "";
-    for (var i = this.word.length - 1; i >= 0; i--) {
+        let newString = "";
+    for (let i = this.word.length - 1; i >= 0; i--) {
         newString += this.word[i];
     }
     return newString;
