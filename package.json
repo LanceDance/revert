@@ -7,7 +7,8 @@
     "build": "rimraf ./build && tsc",
     "start:dev": "nodemon",
     "start": "npm run build && node build/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r ts-node/register 'src/tests/*.ts' --reporter mochawesome"
+
   },
   "repository": {
     "type": "git",
@@ -26,9 +27,11 @@
   "devDependencies": {
     "@types/node": "^14.14.37",
     "chai": "^4.3.4",
+    "mock-stdin": "^1.0.0",
     "mocha": "^8.3.2",
     "mochawesome": "^6.2.2",
     "nodemon": "^2.0.7",
+    "readline-sync": "^1.4.10",
     "rimraf": "^2.7.1",
     "ts-node": "^9.1.1",
     "tslint": "^6.1.3",

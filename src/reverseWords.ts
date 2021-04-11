@@ -4,15 +4,18 @@ const fs = require('fs');
 
 class ReverseWords {
     word: string;
-    constructor() {
-        this.word = readlineSync.question('Write a word and I do magic with that? ', {limit: /^[a-zA-Z0-9_.-]*$/})
+    private lim = {limit: /^[a-zA-Z0-9_.-]*$/};
+    constructor(word?: string) {
+        word ? this.word = word : this.word = readlineSync.question('Write a word and I do magic with that? ', this.lim)
     }
 
+    
     reverseString() {
         let newString = "";
     for (let i = this.word.length - 1; i >= 0; i--) {
         newString += this.word[i];
     }
+
     return newString;
     }
 

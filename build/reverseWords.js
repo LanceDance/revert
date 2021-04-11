@@ -4,8 +4,9 @@ exports.ReverseWords = void 0;
 var readlineSync = require('readline-sync');
 var fs = require('fs');
 var ReverseWords = /** @class */ (function () {
-    function ReverseWords() {
-        this.word = readlineSync.question('Write a word and I do magic with that? ', { limit: /^[a-zA-Z0-9_.-]*$/ });
+    function ReverseWords(word) {
+        this.lim = { limit: /^[a-zA-Z0-9_.-]*$/ };
+        word ? this.word = word : this.word = readlineSync.question('Write a word and I do magic with that? ', this.lim);
     }
     ReverseWords.prototype.reverseString = function () {
         var newString = "";

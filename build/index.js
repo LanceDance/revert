@@ -12,4 +12,4 @@ var t1 = perf_hooks_1.performance.now();
 var dict = { "input": greeter.word,
     "output": ab,
     "performance": (t1 - t0) };
-reverseWords_1.ReverseWords.createJsonFile('processed.json', dict);
+reverseWords_1.ReverseWords.createJsonFile('output/processed.json', dict);

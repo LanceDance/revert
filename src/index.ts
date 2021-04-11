@@ -13,4 +13,4 @@ let t1 = performance.now();
 const dict = {  "input" : greeter.word,
                 "output" : ab,
                 "performance" : (t1 - t0)};
-ReverseWords.createJsonFile('processed.json', dict)
+ReverseWords.createJsonFile('output/processed.json', dict)
