@@ -1,6 +1,8 @@
 # Smaller app to revert input from user, store to json file
 
 First of course clone repo
+<br>
+then by `npm install` install all dependencies
 ## How to build:
 `npm run build`   
 
