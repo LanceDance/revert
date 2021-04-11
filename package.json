@@ -8,7 +8,6 @@
     "start:dev": "nodemon",
     "start": "ts-node src/index.ts",
     "test": "mocha -r ts-node/register 'src/tests/*.ts' --reporter mochawesome"
-
   },
   "repository": {
     "type": "git",

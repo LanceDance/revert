@@ -1,6 +1,5 @@
 node_modules/
 output/processed.json
-output/test/processed.json
 build
 mochawesome-report
 package-lock.json
