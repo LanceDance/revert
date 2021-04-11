@@ -1,2 +1,4 @@
 node_modules/
 processed.json
+build
+mochawesome-report
