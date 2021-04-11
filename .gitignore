@@ -4,3 +4,4 @@ output/test/processed.json
 build
 mochawesome-report
 package-lock.json
+src/tests/test.js
