@@ -11,13 +11,13 @@ const mock_dict = {  "input" : testValue,
 describe('Check reverse class', () => {
   const result = new ReverseWords(testValue);
   it('Reverse the input string', () => {
-    const a = result.reverseString();
-    expect(a).to.equal('cdSCA321tset');
+    const reversedString = result.reverseString();
+    expect(reversedString).to.equal('cdSCA321tset');
   });
 
   it('Swap letters', () => {
-    const b = result.changeUpperToLowerAndViceVersa(testValue)
-    expect(b).to.equal('TEST123acsDC')
+    const swapedLetters = result.changeUpperToLowerAndViceVersa(testValue)
+    expect(swapedLetters).to.equal('TEST123acsDC')
   })
 
   it('Check regex', () => {
