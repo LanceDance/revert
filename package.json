@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./build && tsc",
+    "build": "tsc",
     "start:dev": "nodemon",
-    "start": "npm run build && node build/index.js",
+    "start": "ts-node src/index.ts",
     "test": "mocha -r ts-node/register 'src/tests/*.ts' --reporter mochawesome"
 
   },
