@@ -1,4 +1,5 @@
 node_modules/
-processed.json
+output/processed.json
+output/test/processed.json
 build
 mochawesome-report
