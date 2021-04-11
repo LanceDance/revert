@@ -12,4 +12,5 @@ let t1 = performance.now();
 const dict = {  "input" : newWord.word,
                 "output" : swaped,
                 "performance" : (t1 - t0)};
+console.log("Your report " + dict)
 ReverseWords.createJsonFile('output/processed.json', dict)

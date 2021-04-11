@@ -42,7 +42,12 @@ class ReverseWords {
         )}
     // rather check if word is correct one more time
     checkIfWordIsCorrect() {
-        this.lim.limit.test(this.word) ? true : console.log('Your word is not in correct order!'); process.exit();
+        const isCorrect = this.lim.limit.test(this.word) ? true : false;
+        if (isCorrect == false) {
+            console.log('Your word is in wrong format')
+            process.exit()
+        }
+
     }
 };
 
